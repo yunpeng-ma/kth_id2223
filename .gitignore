@@ -13,3 +13,5 @@ assets/mathjax
 api-key.sh
 
 src/serverless-ml-intro/.ipynb_checkpoints/
+
+.idea/
