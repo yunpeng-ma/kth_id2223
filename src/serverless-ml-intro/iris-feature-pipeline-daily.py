@@ -5,7 +5,7 @@ LOCAL=False
 
 if LOCAL == False:
    stub = modal.Stub("iris_daily")
-   image = modal.Image.debian_slim().pip_install(["hopsworks"]) 
+   image = modal.Image.debian_slim().pip_install(["hopsworks"])
 
    @stub.function(image=image, schedule=modal.Period(days=1), secret=modal.Secret.from_name("id2223"))
    def f():
@@ -71,6 +71,6 @@ if __name__ == "__main__":
     if LOCAL == True :
         g()
     else:
-        # stub.deploy("iris_daily")
+        stub.deploy("iris_daily")
         with stub.run():
             f()
